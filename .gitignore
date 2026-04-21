@@ -1,0 +1,7 @@
+chroma_db/
+data/texts/
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
