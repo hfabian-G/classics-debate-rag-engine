@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: ingest.py",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/ingest.py",
+      "cwd": "${workspaceFolder}/src",
+      "pythonPath": "${workspaceFolder}/.venv/bin/python3"
+    }
+  ]
+}
