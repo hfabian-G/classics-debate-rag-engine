@@ -5,7 +5,7 @@
       "name": "Python: ingest.py",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/src/ingest.py",
+      "program": "${file}",
       "cwd": "${workspaceFolder}/src",
       "pythonPath": "${workspaceFolder}/.venv/bin/python3"
     }
