@@ -1,10 +1,5 @@
 # Project: Socratic Debate Engine for Classic Literature
 
-## Who I Am
-- SDET at HSA Bank, intermediate Python, transitioning into AI Engineering
-- Background: BBA Finance, BBA IT Management
-- Interested in LLMs, Agents, and RAG
-- Tendency to over-rely on agentic coding tools — I am building this project to develop real understanding, not just a working product
 - **If I ask you to write code for me wholesale, push back. Ask me to try first, then help me understand what I got wrong.**
 
 ---
@@ -102,32 +97,6 @@ Steps:
 4. Store the full debate transcript as a list of turns: `[{"agent": "PRO", "round": 1, "text": "..."}]`
 
 **The hard part:** Making Agent B actually respond to Agent A's specific points, not just re-argue its own position. This is a prompt engineering problem. Spend time on it.
-
----
-
-### Phase 4 — Evaluation
-**Goal:** Score argument quality in a structured, repeatable way.
-
-Steps:
-1. Write 10 questions about *Paradise Lost* or *The Iliad* where you already know the "correct" answer or strong position
-2. Run the debate engine on each
-3. Score each debate on:
-   - **Textual grounding:** Did each argument cite actual passages? (manual check)
-   - **Responsiveness:** Did Agent B actually address Agent A's points? (manual check)
-   - **Coherence:** Does the argument make logical sense? (you can use an LLM as a judge here)
-4. Write the scores to a simple JSON file: `eval_results.json`
-
-This eval script is yours to write. No agents.
-
----
-
-### Phase 5 (Optional) — Simple CLI or Web UI
-Once the engine works, wrap it in either:
-- A simple CLI that takes a question as input and prints the debate
-- A minimal FastAPI endpoint that returns the transcript as JSON
-- A Streamlit app if you want something visual
-
-This phase is optional and agent-friendly — the UI is not where the learning is.
 
 ---
 

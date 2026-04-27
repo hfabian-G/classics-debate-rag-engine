@@ -1,0 +1,50 @@
+{
+  "round_0_agent_a": {
+    "textual_grounding": 5,
+    "citation_reality": 5,
+    "citation_quantity": 6,
+    "evidentiary_quality": 4,
+    "logical_coherence": 4,
+    "positional_strength": 4
+  },
+  "round_0_agent_b": {
+    "textual_grounding": 5,
+    "citation_reality": 5,
+    "citation_quantity": 6,
+    "evidentiary_quality": 4,
+    "logical_coherence": 4,
+    "positional_strength": 4
+  },
+  "round_1_agent_a": {
+    "textual_grounding": 5,
+    "citation_reality": 5,
+    "citation_quantity": 6,
+    "evidentiary_quality": 4,
+    "logical_coherence": 4,
+    "positional_strength": 4
+  },
+  "round_1_agent_b": {
+    "textual_grounding": 5,
+    "citation_reality": 5,
+    "citation_quantity": 6,
+    "evidentiary_quality": 4,
+    "logical_coherence": 4,
+    "positional_strength": 4
+  },
+  "round_2_agent_a": {
+    "textual_grounding": 5,
+    "citation_reality": 5,
+    "citation_quantity": 6,
+    "evidentiary_quality": 4,
+    "logical_coherence": 4,
+    "positional_strength": 4
+  },
+  "round_2_agent_b": {
+    "textual_grounding": 5,
+    "citation_reality": 5,
+    "citation_quantity": 6,
+    "evidentiary_quality": 4,
+    "logical_coherence": 4,
+    "positional_strength": 4
+  }
+}
