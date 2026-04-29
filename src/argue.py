@@ -62,6 +62,6 @@ def score(score_prompt:str):
     return_text = text[first_index:last_index + 1]
 
     if not return_text:
-        raise ValueError('Did not response correctly')
+        raise ValueError('Did not respond correctly')
     else:
         return return_text

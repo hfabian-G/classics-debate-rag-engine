@@ -26,13 +26,15 @@ def coordinate_debate(question:str, prompt: str):
         agent_b_response = agent_b.argue()
 
         argument_log[f'round {str(i)}'] = {
+            'question':agent_a.question,
             'agent_a_prompt':agent_a.prompt,
+            'agent_a_position': agent_a.position,
             'agent_b_prompt':agent_b.prompt,
+            'agent_b_position': agent_b.position,
             'agent_a_response':agent_a_response, 
             'agent_b_response': agent_b_response,
             'agent_a_chunks':chunks_for_a,
             'agent_b_chunks':chunks_for_b
-            
         }
 
         agent_a.set_opponents_previous_argument(agent_b_response)
@@ -46,7 +48,7 @@ def coordinate_debate(question:str, prompt: str):
             agent_b.set_chunks(chunks_for_b)
 
     timestamp = datetime.now().isoformat()
-    with open(f'logs/argument_{timestamp}.log', 'w') as file:
+    with open(f'logs/standard/argument_{timestamp}.log', 'w') as file:
         json.dump(argument_log, file, indent = 2)
 
 def coordinate_poisoned_debate(question: str, prompt: str):
@@ -54,9 +56,12 @@ def coordinate_poisoned_debate(question: str, prompt: str):
     agent_a = agent(question, 'YES', prompt)
     agent_b = agent(question, 'NO', prompt)
 
+    agent_a.set_poisoner()
+
     chunk_count = 6
 
     chunks = retrieve(question, chunk_count)
+
     chunks_for_a = chunks
     chunks_for_b = chunks
 
@@ -71,13 +76,15 @@ def coordinate_poisoned_debate(question: str, prompt: str):
         agent_b_response = agent_b.argue()
 
         argument_log[f'round {str(i)}'] = {
+            'question':agent_a.question,
             'agent_a_prompt':agent_a.prompt,
+            'agent_a_position': agent_a.position,
             'agent_b_prompt':agent_b.prompt,
+            'agent_b_position': agent_b.position,
             'agent_a_response':agent_a_response, 
             'agent_b_response': agent_b_response,
             'agent_a_chunks':chunks_for_a,
             'agent_b_chunks':chunks_for_b
-            
         }
 
         agent_a.set_opponents_previous_argument(agent_b_response)
@@ -91,7 +98,7 @@ def coordinate_poisoned_debate(question: str, prompt: str):
             agent_b.set_chunks(chunks_for_b)
 
     timestamp = datetime.now().isoformat()
-    with open(f'logs/poisoned_argument_{timestamp}.log', 'w') as file:
+    with open(f'logs/poisoned/poisoned_argument_{timestamp}.log', 'w') as file:
         json.dump(argument_log, file, indent = 2)
 
 if __name__ == '__main__':
@@ -123,3 +130,5 @@ At least one citation, but as many as possible
 
 """
     coordinate_debate(question, prompt)
+
+    coordinate_poisoned_debate(question, prompt)
