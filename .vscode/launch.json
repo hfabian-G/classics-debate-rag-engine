@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Python: ingest.py",
+      "name": "Python: debugging.py",
       "type": "debugpy",
       "request": "launch",
       "program": "${file}",

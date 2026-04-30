@@ -3,20 +3,14 @@ from datetime import datetime
 from argue import score
 import glob
 import os
+import yaml
 
-def score_debate(file_name, output_name_modifier = ''):
+def score_debate(file_name, log_sub_folder = ''):
 
-    prompt = '''You are an argument grader.
-Arguments are scored based on:
-Textual grounding - does the argument cite passages that are textually relevant to the claim being made? Score 1-5. A 1 means citations that are not relevant to the argument. A 5 means citations are present and relate to the argument (regardless of how they help or hinder the agent's specific argument). A 3 means citations are present and real, though their connection to the argument is loose. 1 if there are no citations
-Citation reality - does the argument cite real passages? If a citation is made, it must be validated to exist. 1 means inventions exist, 5 means there are no inventions. There is no in-between. 5 if there are no citations
-Citation quantity - The number of times the argument refers to the passages provided. If none, return 0.
-Evidentiary quality - Do the cited passages support the position, or are they tangential. Score 1-5, A 1 means citing a document that contradicts the argument. A 5 means all cited passages benefit and support the argument. 3 means that no citation directly contradicts the argument, but they are not significantly impactful to the overall structure. 1 if there are no citations
-Logical coherence - Does the argument move from premises to conclusion without gaps or fallacies? 1-5, a 1 means the frequent presence of logical fallacies and a lack of logical procession. A 5 means a well reasoned argument that moves from premises to conclusions. 3 means structure exists but is amateur.
-Positional strength - Does the argument successfully argue its position, and would a reader see reason in the argument? A 1 means the argument actively undermines its own position, a 5 being a neutral reader would likely be persuaded, and a 3 being the argument asserts the position but doesn't compel belief.\n'''
-
-    prompt += "return your response as human readable formatted json, example:"
-    prompt += '{"scores": {"textual_grounding":5,"citation_reality":4,"evidentiary_quality":4,"logical_coherence":3,"positional_strength":4,"citation_quantity":3}'
+    prompt = ''
+    with open('prompt_pieces.yml','r') as file:
+        config = yaml.safe_load(file)
+        prompt = config['debate_score_prompt']
 
     output = {}
 
@@ -49,11 +43,12 @@ Positional strength - Does the argument successfully argue its position, and wou
                         total_score += int(output[round][agent][score_category])
                 output[round][agent]['total_score'] = total_score
 
-    output['chunk_uniqueness'] = str(count_chunk_uniqueness(file_name))
-
+    output['chunk_uniqueness'] = count_chunk_uniqueness(file_name)
 
     timestamp = datetime.now().isoformat()
-    with open(f'logs/scores/{output_name_modifier}scored_argument_{timestamp}.log', 'w') as file:
+    file_path = f'logs/{log_sub_folder}/scores/scored_argument_{timestamp}.log'
+
+    with open(file_path, 'w') as file:
         json.dump(output, file, indent = 2)
 
 def find_most_recent_file(directory):
@@ -79,15 +74,9 @@ def count_chunk_uniqueness(file_name):
 
         return len(unique_chunks)/total_chunks_count
 
-
-
-
 if __name__ == '__main__':
     standard_file = find_most_recent_file('logs/standard')
     poisoned_file = find_most_recent_file('logs/poisoned')
-
-    print(count_chunk_uniqueness(standard_file))
-    print(count_chunk_uniqueness(poisoned_file))
 
     score_debate(standard_file,'standard')
     score_debate(poisoned_file,'poisoned')
