@@ -56,6 +56,19 @@ def find_most_recent_file(directory):
     latest_file = max(list_of_files, key = os.path.getmtime)
     return latest_file
 
+def find_most_recent_files(directory, quantity):
+    list_of_files = glob.glob(f"{directory}/*")
+    if len(list_of_files) <= quantity:
+        return list_of_files
+    else:
+        return_files = []
+        for file in list_of_files:
+            latest_file = max(list_of_files, key = os.path.getmtime)
+            return_files.append(latest_file)
+            list_of_files.remove(latest_file)
+        return return_files
+
+
 def count_chunk_uniqueness(file_name):
     with open(file_name,'r') as file:
         
@@ -64,7 +77,9 @@ def count_chunk_uniqueness(file_name):
         unique_chunks = set()
         total_chunks_count = 0
 
-        for round in data:
+        for index, round in enumerate(data):
+            if index == 0:
+                continue
             agent_a_chunks = list(data[round]['agent_a_chunks'])
             agent_b_chunks = list(data[round]['agent_b_chunks'])
             unified_chunks = agent_a_chunks + agent_b_chunks

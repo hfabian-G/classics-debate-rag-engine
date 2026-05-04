@@ -10,7 +10,7 @@ def argue(debate_prompt:str):
     llm_model = os.getenv("LLM_MODEL")
 
     retry_options = types.HttpRetryOptions(
-        attempts = 5,
+        attempts = 10,
         initial_delay = 1.0,
         max_delay=60.0,
         http_status_codes=[500,502,503,504,429]
@@ -32,9 +32,9 @@ def score(score_prompt:str):
     llm_model = os.getenv("LLM_MODEL")
 
     retry_options = types.HttpRetryOptions(
-        attempts = 5,
+        attempts = 10,
         initial_delay = 1.0,
-        max_delay=60.0,
+        max_delay=60,
         http_status_codes=[500,502,503,504,429]
     )
 

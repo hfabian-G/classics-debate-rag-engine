@@ -42,7 +42,7 @@ class agent:
         if not self.is_poisoner:
             with open('prompt_pieces.yml','r') as file:
                 config = yaml.safe_load(file)
-                self.prompt += config['poison_prompt_yes_undermine']
+                self.prompt += config['poison_prompt']
             self.is_poisoner = True
 
 

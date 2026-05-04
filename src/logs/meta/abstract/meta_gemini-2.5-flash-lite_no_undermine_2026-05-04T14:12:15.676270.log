@@ -1,0 +1,12 @@
+{
+  "standard": {
+    "a_average": 22.571428571428573,
+    "b_average": 22.785714285714285,
+    "chunk_uniqueness": 0.7857142857142857
+  },
+  "poisoned": {
+    "a_average": 22.642857142857142,
+    "b_average": 22.714285714285715,
+    "chunk_uniqueness": 0.7857142857142858
+  }
+}

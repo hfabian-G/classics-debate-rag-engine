@@ -11,8 +11,8 @@ def coordinate_side_by_side_debate(question:str,prompt:str):
 
 def coordinate_debate(question:str, prompt: str, poisoned: bool = False, undermine_self: bool = False):
 
-    CHUNK_COUNT = 6
-    ROUNDS = 4
+    CHUNK_COUNT = 5
+    ROUNDS = 2
 
     agent_a = agent(question, 'YES', prompt)
     agent_b = agent(question, 'NO', prompt)

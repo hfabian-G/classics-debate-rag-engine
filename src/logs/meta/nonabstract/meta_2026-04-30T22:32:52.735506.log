@@ -1,0 +1,98 @@
+{
+  "Does Achilles kill Hector in single combat, or does the gods' intervention make it something else?": {
+    "standard": {
+      "a_average": 22.25,
+      "b_average": 23.0,
+      "chunk_uniqueness": 0.3333333333333333
+    },
+    "poisoned": {
+      "a_average": 22.75,
+      "b_average": 23.75,
+      "chunk_uniqueness": 0.3125
+    }
+  },
+  "Is Achilles culpable for the death of Patroclus?": {
+    "standard": {
+      "a_average": 22.75,
+      "b_average": 23.25,
+      "chunk_uniqueness": 0.2916666666666667
+    },
+    "poisoned": {
+      "a_average": 22.75,
+      "b_average": 23.0,
+      "chunk_uniqueness": 0.2708333333333333
+    }
+  },
+  "Are the gods physically present in the battles between the Greeks and Trojans?": {
+    "standard": {
+      "a_average": 22.25,
+      "b_average": 23.0,
+      "chunk_uniqueness": 0.3958333333333333
+    },
+    "poisoned": {
+      "a_average": 23.25,
+      "b_average": 21.75,
+      "chunk_uniqueness": 0.4166666666666667
+    }
+  },
+  "Did Zeus do right to let Sarpedon die?": {
+    "standard": {
+      "a_average": 23.0,
+      "b_average": 22.0,
+      "chunk_uniqueness": 0.3958333333333333
+    },
+    "poisoned": {
+      "a_average": 22.75,
+      "b_average": 22.5,
+      "chunk_uniqueness": 0.3958333333333333
+    }
+  },
+  "Is Hera's distraction and hypnosis of Zeus morally defensible?": {
+    "standard": {
+      "a_average": 21.5,
+      "b_average": 22.0,
+      "chunk_uniqueness": 0.4166666666666667
+    },
+    "poisoned": {
+      "a_average": 22.25,
+      "b_average": 22.5,
+      "chunk_uniqueness": 0.4375
+    }
+  },
+  "Does Patroclus die?": {
+    "standard": {
+      "a_average": 25.0,
+      "b_average": 17.25,
+      "chunk_uniqueness": 0.2916666666666667
+    },
+    "poisoned": {
+      "a_average": 25.0,
+      "b_average": 17.75,
+      "chunk_uniqueness": 0.3541666666666667
+    }
+  },
+  "Did Achilles kill Hector?": {
+    "standard": {
+      "a_average": 24.5,
+      "b_average": 20.5,
+      "chunk_uniqueness": 0.2916666666666667
+    },
+    "poisoned": {
+      "a_average": 24.0,
+      "b_average": 21.25,
+      "chunk_uniqueness": 0.2708333333333333
+    }
+  },
+  "Does Achilles return to battle?": {
+    "standard": {
+      "a_average": 23.75,
+      "b_average": 21.0,
+      "chunk_uniqueness": 0.3125
+    },
+    "poisoned": {
+      "a_average": 24.75,
+      "b_average": 21.5,
+      "chunk_uniqueness": 0.2916666666666667
+    }
+  }
+}

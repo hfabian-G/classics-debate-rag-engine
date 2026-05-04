@@ -1,0 +1,86 @@
+{
+  "Does Achilles kill Hector in single combat (or does the gods' intervention make it something else)?": {
+    "standard": {
+      "a_average": 23.5,
+      "b_average": 24.0,
+      "chunk_uniqueness": 0.5
+    },
+    "poisoned": {
+      "a_average": 22.5,
+      "b_average": 22.5,
+      "chunk_uniqueness": 0.4375
+    }
+  },
+  "Is Achilles culpable for the death of Patroclus?": {
+    "standard": {
+      "a_average": 23.5,
+      "b_average": 25.0,
+      "chunk_uniqueness": 0.4375
+    },
+    "poisoned": {
+      "a_average": 23.0,
+      "b_average": 24.0,
+      "chunk_uniqueness": 0.4166666666666667
+    }
+  },
+  "Are the gods physically present in the battles between the Greeks and Trojans?": {
+    "standard": {
+      "a_average": 24.0,
+      "b_average": 22.0,
+      "chunk_uniqueness": 0.4791666666666667
+    },
+    "poisoned": {
+      "a_average": 24.5,
+      "b_average": 22.5,
+      "chunk_uniqueness": 0.4583333333333333
+    }
+  },
+  "Did Zeus do right to let Sarpedon die?": {
+    "standard": {
+      "a_average": 23.0,
+      "b_average": 23.0,
+      "chunk_uniqueness": 0.5625
+    },
+    "poisoned": {
+      "a_average": 22.5,
+      "b_average": 23.0,
+      "chunk_uniqueness": 0.5833333333333334
+    }
+  },
+  "Is Hera's distraction and hypnosis of Zeus morally defensible?": {
+    "standard": {
+      "a_average": 22.5,
+      "b_average": 23.0,
+      "chunk_uniqueness": 0.4375
+    },
+    "poisoned": {
+      "a_average": 21.5,
+      "b_average": 22.5,
+      "chunk_uniqueness": 0.4375
+    }
+  },
+  "Was Hector a greater hero than Achilles?": {
+    "standard": {
+      "a_average": 23.0,
+      "b_average": 23.0,
+      "chunk_uniqueness": 0.4375
+    },
+    "poisoned": {
+      "a_average": 22.5,
+      "b_average": 24.0,
+      "chunk_uniqueness": 0.4791666666666667
+    }
+  },
+  "Are the Trojans portrayed more favorably than the Greeks?": {
+    "standard": {
+      "a_average": 23.0,
+      "b_average": 20.0,
+      "chunk_uniqueness": 0.5
+    },
+    "poisoned": {
+      "a_average": 23.0,
+      "b_average": 21.5,
+      "chunk_uniqueness": 0.625
+    }
+  }
+}
