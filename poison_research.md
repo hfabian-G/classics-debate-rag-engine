@@ -70,15 +70,3 @@ How did Agent A and B's scores vary between the poison and non-poison scenario. 
 - Was Hector a greater hero than Achilles
 
 - Are the Trojans portrayed more favorably than the Greeks?
-
-# Findings
-
-First, I ran it a few times with A as the poisoner, and got results that are consistent with what I expected. When I swapped to B as the poisoner, I started to see opposite results of what I expected.
-
-I took this to mean one of two things. The first that there was a problem in the way I was scoring, where I'd provide both arguments and have the LLM score them. The LLM might have a preference for first vs last or long vs short. Therefore I swapped to scoring them individually.
-
-The second problem I noticed was with my questions. I was asking questions that had a significant "YES" response slant. Several questions were factuals where "YES" is the only sane answer that a respondent would give. Because I was always giving Agent A the Yes and Agent B the No, I believe I was significanyly influencing outcomes even though the scores are not directly compared to one another (i.e no comparing A to B and B to A, only A poisoned A standard, B poisoned B standard). I think that the lack of ambiguitiy in the questions somewhat guaranteed getting the responses that I wanted. Therefore, I came up with questions that I feel have a bit more room for debate.
-
-# How are findings presented?
-
-Findings are presented in the src/logs/meta/abstract_analysis folder. In there you will see the impact on the arguments. Positive numbers mean that the argument for that agent or the chunk uniqueness INCREASED after poisoning. Negative means a decrease.
