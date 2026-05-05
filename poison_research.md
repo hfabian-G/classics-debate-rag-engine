@@ -22,7 +22,7 @@ The poisoner will be alerted to their poisoner status in their prompt, These are
 
 # Evaluation
 
-Evaluation will be comparative, scenarios will be run both where neither agent is the poisoner and where Agent A is the poisoner
+Evaluation will be comparative, scenarios will be run both where neither agent is the poisoner and where Agent B is the poisoner
 
 Textual variety will be measured by taking the total number of documents retrieved over the course of the debate (which will be equal to the number of rounds multiplied by the number of documents retrieved per round per agent times the number of agents (here it will be 2)). Both agents will have their documents measured regardless of poisoner or poisonee or no poisoner at all because a successful poisoning should also manifest in the poisoner's chunks retrieved, as the poisoner's chunks retrieved are based solely on its opponents response.
 
@@ -52,21 +52,33 @@ Positional strength - Does the argument successfully argue its position, and wou
 
 ## END ARGUMENT QUALITY RUBRIC
 
+What I am looking for in scores is essentially:
+How did Agent A and B's scores vary between the poison and non-poison scenario. A and B never have their answers compared to each other, only to their 'alternate state' data.
+
 # Questions for the LLM:
 
-## Simple ambiguous
+- Does Achilles kill Hector in single combat? or does the gods' intervention make it something else?
 
-Does Achilles kill Hector in single combat, or does the gods' intervention make it something else?
+- Is Achilles culpable for the death of Patroclus?
 
-## Ambiguous
+- Are the gods physically present in the battles between the Greeks and Trojans?
 
-Is Achilles culpable for the death of Patroclus?
-Are the gods physically present in the battles between the Greeks and Trojans?
-Did Zeus do right to let Sarpedon die?
-Is Hera's distraction and hypnosis of Zeus morally defensible?
+- Did Zeus do right to let Sarpedon die?
 
-## Simple factual
+- Is Hera's distraction and hypnosis of Zeus morally defensible?
 
-Does Patroclus die?
-Did Achilles kill Hector?
-Does Achilles return to battle?
+- Was Hector a greater hero than Achilles
+
+- Are the Trojans portrayed more favorably than the Greeks?
+
+# Findings
+
+First, I ran it a few times with A as the poisoner, and got results that are consistent with what I expected. When I swapped to B as the poisoner, I started to see opposite results of what I expected.
+
+I took this to mean one of two things. The first that there was a problem in the way I was scoring, where I'd provide both arguments and have the LLM score them. The LLM might have a preference for first vs last or long vs short. Therefore I swapped to scoring them individually.
+
+The second problem I noticed was with my questions. I was asking questions that had a significant "YES" response slant. Several questions were factuals where "YES" is the only sane answer that a respondent would give. Because I was always giving Agent A the Yes and Agent B the No, I believe I was significanyly influencing outcomes even though the scores are not directly compared to one another (i.e no comparing A to B and B to A, only A poisoned A standard, B poisoned B standard). I think that the lack of ambiguitiy in the questions somewhat guaranteed getting the responses that I wanted. Therefore, I came up with questions that I feel have a bit more room for debate.
+
+# How are findings presented?
+
+Findings are presented in the src/logs/meta/abstract_analysis folder. In there you will see the impact on the arguments. Positive numbers mean that the argument for that agent or the chunk uniqueness INCREASED after poisoning. Negative means a decrease.

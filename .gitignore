@@ -5,4 +5,5 @@ __pycache__/
 .env
 venv/
 .venv/
-src/logs/*
+src/logs/poisoned/*
+src/logs/standard/*
