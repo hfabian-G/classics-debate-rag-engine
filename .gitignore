@@ -7,3 +7,4 @@ venv/
 .venv/
 src/logs/poisoned/*
 src/logs/standard/*
+prospectus.md
